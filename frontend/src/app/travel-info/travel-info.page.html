@@ -1,0 +1,100 @@
+<ion-content>
+  <div id="curtain">
+    <span></span>
+    <span></span>
+    <span></span>
+ 
+    <div id="travelInfoContainer" class="animate__animated">
+      <ion-icon name="arrow-back-outline" (click)="goHome()" id="home"></ion-icon>
+      <ion-slides class="slide-full" [options]="sliderConfig" *ngFor="let item of travels" data-swiper-parallax="-23%">
+        <ion-slide class="slide" style="background: url(../../assets/img/{{item?.img1}}.jpg)"></ion-slide>
+        <ion-slide class="slide" style="background: url(../../assets/img/{{item?.img2}}.jpg);"></ion-slide>
+        <ion-slide class="slide" style="background: url(../../assets/img/{{item?.img3}}.jpg);"></ion-slide>
+      </ion-slides>
+      <div id="slideOp"></div>
+      <div id="sliderR" *ngFor="let item of travels">
+        <div id="slideContent">
+          <h2 id="h2sl" class="animate__animated">{{item.subname}}</h2>
+          <h1 id="h1sl" class="animate__animated">{{item?.name}}</h1>
+          <p id="psl" class="animate__animated">{{item?.descripcion}}</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="cloudContent">
+      <div id="swipeUps" class="animate__animated" (panup)="TransitionPagePanUp($event)">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+        <ion-icon name="chevron-up-outline"></ion-icon>
+        <ion-icon name="chevron-up-outline"></ion-icon>
+        <p>Swipe Up</p>
+      </div>
+      <div id="clouds" class="animate__animated">
+        <img src="../../assets/img/cloud1.png" style="--i:1;">
+        <img src="../../assets/img/cloud2.png" style="--i:2;">
+        <img src="../../assets/img/cloud3.png" style="--i:3;">
+        <img src="../../assets/img/cloud4.png" style="--i:4;">
+        <img src="../../assets/img/cloud5.png" style="--i:5;">
+        <img src="../../assets/img/cloud1.png" style="--i:10;">
+        <img src="../../assets/img/cloud2.png" style="--i:9;">
+        <img src="../../assets/img/cloud3.png" style="--i:8;">
+        <img src="../../assets/img/cloud4.png" style="--i:7;">
+        <img src="../../assets/img/cloud5.png" style="--i:6;">
+      </div>
+      <div id="moreContent" *ngFor="let item of travels">
+        <ion-icon name="arrow-up-outline" id="back" (click)="TransitionPageBack()"></ion-icon>
+        <div id="delete" (click)="openPopUp()"><ion-icon name="trash-outline"></ion-icon></div>
+        <h1 id="ch1">{{item?.name}}</h1>
+        <p id="cpds">{{item?.descripcion2}}</p>
+        <div id="clouds2">
+          <img src="../../assets/img/cloud1.png" style="--i:1;">
+          <img src="../../assets/img/cloud2.png" style="--i:2;">
+          <img src="../../assets/img/cloud3.png" style="--i:3;">
+          <img src="../../assets/img/cloud4.png" style="--i:4;">
+          <img src="../../assets/img/cloud5.png" style="--i:5;">
+          <img src="../../assets/img/cloud1.png" style="--i:10;">
+          <img src="../../assets/img/cloud2.png" style="--i:9;">
+          <img src="../../assets/img/cloud3.png" style="--i:8;">
+          <img src="../../assets/img/cloud4.png" style="--i:7;">
+          <img src="../../assets/img/cloud5.png" style="--i:6;">
+        </div>
+        <ion-button id="update" (click)="openPopUp5()">Update Travel</ion-button>
+      </div>
+
+
+      <div id="popup" *ngFor="let item of travels">
+        <div id="buttonCloseMap" (click)="closePopUp()"><ion-icon name="close"></ion-icon></div>
+        <h1>¿ Esta Seguro de que desea eliminar a <b>{{item.name}}</b> ?</h1>
+        <ion-button id="popupbutton" (click)="deleteTravel(item.id)">Delete</ion-button>
+      </div>
+
+      <div id="popup5" *ngFor="let item of travels">
+        <div id="buttonCloseMap" (click)="closePopUp5()"><ion-icon name="close"></ion-icon></div>
+        <ion-list lines="full" class="ion-no-margin ion-no-padding ios list-ios list-lines-full list-ios-lines-full hydrated">
+          <form [formGroup]="travelForm" (ngSubmit)="onFormSubmit()" id="forms">
+            <ion-item>
+              <ion-label position="floating">Name</ion-label>
+              <ion-input formControlName="name" type="text" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Descripcion</ion-label>
+              <ion-input formControlName="descripcion" type="text" required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Subname</ion-label>
+              <ion-input formControlName="subname" type="text" required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Descripcion Extra</ion-label>
+              <ion-input formControlName="descripcion2" type="text" required>
+              </ion-input>
+            </ion-item>
+              <ion-button  type="submit" [disabled]="!this.travelForm.valid">Update {{item.name}}</ion-button>
+          </form>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+</ion-content>

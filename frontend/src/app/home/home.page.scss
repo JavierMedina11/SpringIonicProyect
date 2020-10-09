@@ -1,0 +1,369 @@
+ion-content{
+  --overflow: hidden;
+}
+
+#container {
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(../../assets/img/homeBg.jpg);
+  background-size: cover;
+  overflow: hidden;
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+#homeOp{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #042640;
+  opacity: .73;
+}
+
+#homeContent{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  // background: #042640;
+}
+
+#homeContent img{
+  height: 30%;
+  width: 80%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+ion-button{
+  width: 70%;
+  position: absolute;
+  top: 75%;
+  left: 15%;
+  font-family: 'neueM';
+  text-transform: uppercase;
+  --background: #C20000;
+  --background-hover: #a50000;
+  box-shadow: 0 3px 25px #000;
+}
+
+#listItems{
+  height: 55%;
+  width: 100%;
+  background: #ffffff;
+  position: absolute;
+  top: 45%;
+  visibility: hidden;
+}
+
+
+svg{
+  position: absolute;
+  margin-top: -5%;
+  transform: rotate(0deg);
+  margin-left: -10%;
+}
+
+.bar{
+  width: 1%;
+  height: 3%;
+  position: absolute;
+  background: #C20000;
+  top: 8.5%;
+  left: 5%;
+  box-shadow: 0 2px 6px rgba(0,0,0,.6);
+}
+
+.bartxt{
+  position: absolute;
+  margin-top: -57%;
+  width: auto;
+  font-size: 22px;
+  font-family: 'Quicksand-semiBold';
+  color: #042640;
+  top: 55%;
+  left: 7%;
+}
+
+#post{
+  height: 7vh;
+  width: 7vh;
+  position: absolute;
+  top: 4%;
+  right: 7%;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: inset -3px -3px 7px #ffffff, 3px 3px 5px
+  rgba(94, 104, 121, .288);
+  z-index: 1000;
+}
+
+#post ion-icon{
+  color: #042640;
+  margin-top: 30%;
+  margin-left: 30%;
+}
+
+.slide-full{
+  height: 85% !important;
+  margin-top: 14%;
+  --bullet-background: #0768A9;
+  --bullet-background-active: #F9D54A;
+  --background: red;
+}
+
+ion-icon[name=medical]{
+  height: 7%;
+  width: 7%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+ion-card-header{
+  position: relative;
+}
+
+ion-card-title{
+  color: #fff;
+  font-size: 700%;
+  text-align: center;
+  width: 100%;
+  font-family: 'hello';
+  text-transform: uppercase;
+  position: absolute;
+  left: 0%;
+  top: 235%;
+}
+
+ion-card-subtitle{
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  left: 0%;
+  top: 225%;
+  text-align: center;
+  width: 100%;
+  font-family: 'Quicksand-light';
+  text-transform: uppercase;
+}
+
+.slide{
+  height: 100%;
+  width: 30%;
+  --background: red; 
+  transition: 1s all;
+}
+
+.slide-full .slide ion-card{
+  overflow: unset !important;
+  height: 80%;
+  width: 80%;
+  box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.75);
+  border-radius: 15px;
+  background-size: cover;
+  margin-top: 7.5%;
+  user-select: none; 
+  box-shadow: 0% 3% 10% 0% rgba(0,0,0,1);
+}
+
+.swiper-slide-prev{
+  opacity: .5;
+  transform: rotate(-8deg);
+}
+
+.swiper-slide-next{
+  opacity: .5;
+  transform: rotate(8deg);
+}
+
+#cardOp{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6096813725490196) 44%, rgba(0,0,0,1) 100%);
+  border-radius: 15px;
+  margin-top: -5%;
+}
+
+#popCont{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  transform: scale(0);
+  z-index: 1100;
+}
+
+#popup2 {
+  height: 70%;
+  width: 90%;
+  background: #ffffff;
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  border-radius: 25px;
+  z-index: 1100;
+  transition: 1s easy;
+}
+
+#pop2h1{
+  width: 80%;
+  position: absolute !important;
+  font-family: 'hello' !important;
+  text-transform: uppercase;
+  color: #C20000;
+  font-size: 70px !important;
+  text-shadow: 0 3px 6px rgba(0,0,0,.1);
+  top: 10% !important;
+  left: 10%;
+  text-align: center;
+  z-index: 1000;
+}
+
+#popup2 form{
+  position: absolute;
+  top: 15%;
+  width: 100% !important;
+}
+ 
+#popCont.active {
+  transform: scale(1);
+  visibility: visible;
+}
+
+#buttonCloseMap{
+  height: 5vh;
+  width: 5vh;
+  position: absolute;
+  top: 7%;
+  right: 10%;
+  background: transparent;
+  border-radius: 50%;
+  // box-shadow: inset -3px -3px 7px #ffffff, 3px 3px 5px
+  // rgba(94, 104, 121, .288);
+}
+
+#buttonCloseMap ion-icon{
+  font-size: 30px;
+  color: #C20000;
+  margin-top: 30%;
+  margin-left: 30%;
+  z-index: 2000;
+}
+
+ion-list{
+  height: 85%;
+  font-family: 'Quicksand-light';
+  border-radius: 25px;
+  margin-top: 15%;
+}
+
+#forms{
+  height: 100% !important;
+  width: 100% !important;
+  font-family: 'Quicksand-light';
+  position: absolute;
+  top: 10% !important;
+}
+
+#forms ion-button:nth-child(5){
+  width: 70%;
+  position: absolute;
+  top: 65%;
+  left: 15%;
+  --background: #C20000;
+  --background-hover: #a50000;
+  box-shadow: 0 3px 11px rgba(0,0,0,.4);
+  z-index: 800;
+}
+
+
+ 
+/* ------------------------- */
+/* TRANSICIONES POPUPS */
+/* ------------------------- */
+
+.prueba {
+  filter: blur(1.5em);
+  transition-duration: 1s;
+}
+
+.popup2.active {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0 0 10px #000000;
+}
+
+#cloudsGroup1{
+  height: 50%;
+  width: 100%;
+  // background: blue;
+  position: absolute;
+}
+
+#cloudsGroup1 img{
+  max-width: 400%;
+  position: absolute;
+  left: -100%;
+  bottom: 0;
+}
+
+#cloudsGroup2{
+  height: 50%;
+  width: 100%;
+  // background: green;
+  position: absolute;
+  top: 50%;
+}
+
+#cloudsGroup2 img{
+  max-width: 400%;
+  position: absolute;
+  transform: rotate(180deg);
+  right: -100%;
+  top: -2.5;
+}
+
+
+#buttonCloseMap2{
+  height: 5vh;
+  width: 5vh;
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  background: transparent;
+  border-radius: 50%;
+  z-index: 1500;
+  // box-shadow: inset -3px -3px 7px #ffffff, 3px 3px 5px
+  // rgba(94, 104, 121, .288);
+}
+
+#buttonCloseMap2 ion-icon{
+  font-size: 30px;
+  color: #C20000;
+  margin-top: 30%;
+  margin-left: 30%;
+  z-index: 2000;
+}
